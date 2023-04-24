@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
 {
     public float movementSpeed = 5.0f;
     public float flyingSpeed = 10.0f;
-    public float mouseSensitivity = 1.0f;
+    public float mouseSensitivity = 100.0f;
 
     private float verticalRotation = 90.0f;
     private float horizontalRotation = 0.0f;
@@ -37,8 +37,8 @@ public class CharacterController : MonoBehaviour
         transform.Translate(new Vector3(0, flyingMovement, 0));
 
         // Get mouse movement
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity; 
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
+        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
         // Rotate camera around y-axis based on mouse movement
         horizontalRotation += mouseX;
 
