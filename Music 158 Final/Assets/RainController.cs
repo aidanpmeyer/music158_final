@@ -1,9 +1,11 @@
+using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using UnityEngine;
 
 public class RainController : MonoBehaviour
 {
-    public AudioSource dropSound; // Assign the raindrop sound effect to this variable
+    public GameObject dropSound; // Assign the raindrop sound effect to this variable
 
     private ParticleSystem rainParticles; // Reference to the particle system component
 
@@ -19,6 +21,7 @@ public class RainController : MonoBehaviour
     // Method to be called when a rain particle collides with the water plane
     void OnParticleCollision(GameObject other)
     {
+        Debug.Log("rain impact");
         if (other.CompareTag("Water"))
         {
             List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
@@ -26,9 +29,19 @@ public class RainController : MonoBehaviour
             for (int i = 0; i < numCollisionEvents; i++)
             {
                 Vector3 collisionPos = collisionEvents[i].intersection;
-                dropSound.transform.position = collisionPos;
-                dropSound.Play();
+                GameObject newDrop = Instantiate(dropSound);
+                newDrop.transform.position = collisionPos;
+                StartCoroutine(Drop(newDrop));
             }
         }
+    }
+    IEnumerator Drop(GameObject drop)
+    {
+        AudioSource dropSound = drop.GetComponent<AudioSource>();
+        dropSound.Play();
+        yield return new WaitForSeconds(1.0f);
+        Destroy(drop);
+
+       
     }
 }

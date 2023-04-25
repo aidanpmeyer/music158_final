@@ -13,7 +13,7 @@ public class TimeManager: MonoBehaviour
 
 
     public float waterLevelMax = 4.11f;
-    public float fillDuration = 5.0f;           // Duration of time to fill the water
+    private float fillDuration = 0;           // Duration of time to fill the water
     private bool isFilling = false;             // Flag to check if coroutine is running
     public GameObject water;                    // The water plane 
 
@@ -23,19 +23,20 @@ public class TimeManager: MonoBehaviour
     {
         // Set initial light angle to be daytime
         sun.transform.rotation = Quaternion.Euler(dayAngle, 0f, 0f);
-        StartCoroutine(Fill()); // Start the Fill coroutine
+        fillDuration = dayLengthInSeconds;
+       
     }
 
     void Update()
     {
         // Calculate the angle of the sun based on the current time of day
-        float angle = (Time.time / dayLengthInSeconds) * 360f;
+        float angle = (Time.time / dayLengthInSeconds) * 360f % 360;
+     
 
         // Update the angle of the sun
         sun.transform.rotation = Quaternion.Euler(angle, 0f, 0f);
-
         // Switch to night if the sun angle is below the night threshold
-        if (isDay && sun.transform.rotation.eulerAngles.x < nightAngle)
+        if (isDay && sun.transform.rotation.eulerAngles.x > nightAngle)
         {
             isDay = false;
             //TODO: call on sound manager to start night sounds
@@ -43,35 +44,32 @@ public class TimeManager: MonoBehaviour
         }
 
         // Switch to day if the sun angle is above the day threshold
-        if (!isDay && sun.transform.rotation.eulerAngles.x > dayAngle)
+        if (!isDay && sun.transform.rotation.eulerAngles.x < nightAngle)
         {
             isDay = true;
-            DayNum += 1;  
-            if(DayNum == 1)
-            {
-                StartCoroutine(Fill()); // Start the Fill coroutine
-            }
-            if(DayNum == 2)
-            {
-                StartCoroutine(Dry()); //start dry routine
-            }
+            DayNum += 1;
+            Debug.Log("hit the switch");
             switch (DayNum)
             {
                 case 1:
+                    Debug.Log("DAY 1 start");
                     StartCoroutine(Fill()); //day 1 the pond fills life appears
                     break;
                 case 2:
+                    Debug.Log("DAY 2 start");
                     //TODO make a storm Coroutine //day two the rain picks up there is a huge storm
                     break;
                 case 3:
+                    Debug.Log("DAY 3 start");
                     StartCoroutine(Dry()); //day three the pond dries up
                     break;
                 case 4:
+                    Debug.Log("DAY 4 start");
 
                     break;
             }
                     //TODO: call on sound manager to start day sounds
-                    Debug.Log("Switched to day");
+                  
         }
     }
 

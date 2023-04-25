@@ -374,6 +374,7 @@
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/UnityEngine.XR.LegacyInputHelpers.ref.dll"
 "Assets/CharacterController.cs"
+"Assets/dropplet.cs"
 "Assets/RainController.cs"
 "Assets/TimeManager.cs"
 "Assets/XRPlatformControllerSetup.cs"
