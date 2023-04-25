@@ -6,7 +6,7 @@ public class CharacterController : MonoBehaviour
 {
     public float movementSpeed = 5.0f;
     public float flyingSpeed = 10.0f;
-    public float mouseSensitivity = 100.0f;
+    public float mouseSensitivity = 500.0f;
 
     private float verticalRotation = 90.0f;
     private float horizontalRotation = 0.0f;

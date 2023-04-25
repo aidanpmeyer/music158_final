@@ -58,6 +58,8 @@
   <ItemGroup>
     <Compile Include="Assets\XRPlatformControllerSetup.cs" />
     <Compile Include="Assets\CharacterController.cs" />
+    <Compile Include="Assets\TimeManager.cs" />
+    <Compile Include="Assets\RainController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
