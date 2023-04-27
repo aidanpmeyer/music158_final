@@ -12,18 +12,18 @@ public class TimeManager: MonoBehaviour
     public int DayNum = 0;
 
 
-    public float waterLevelMax = 4.11f;
-    private float fillDuration = 0;           // Duration of time to fill the water
+    
+
     private bool isFilling = false;             // Flag to check if coroutine is running
     public GameObject water;                    // The water plane 
-
+    public grow grow;
 
    
     void Start()
     {
         // Set initial light angle to be daytime
         sun.transform.rotation = Quaternion.Euler(dayAngle, 0f, 0f);
-        fillDuration = dayLengthInSeconds;
+
        
     }
 
@@ -41,6 +41,24 @@ public class TimeManager: MonoBehaviour
             isDay = false;
             //TODO: call on sound manager to start night sounds
             Debug.Log("Switched to night");
+            switch (DayNum)
+            {
+                case 1:
+                    Debug.Log("NIGHT 1 start");
+                    break;
+                case 2:
+                    Debug.Log("NIGHT 2 start");
+                    //TODO make a storm Coroutine //day two the rain picks up there is a huge storm
+                    break;
+                case 3:
+                    Debug.Log("NIGHT 3 start");
+                    //day three the pond dries up
+                    break;
+                case 4:
+                    Debug.Log("NIGHT 4 start");
+
+                    break;
+            }
         }
 
         // Switch to day if the sun angle is above the day threshold
@@ -53,19 +71,22 @@ public class TimeManager: MonoBehaviour
             {
                 case 1:
                     Debug.Log("DAY 1 start");
-                    StartCoroutine(Fill()); //day 1 the pond fills life appears
+                    StartCoroutine(Fill(4.11f,dayLengthInSeconds)); //day 1 the pond fills life appears
+                    StartCoroutine(grow.Grow(dayLengthInSeconds, true));
                     break;
                 case 2:
                     Debug.Log("DAY 2 start");
+                    StartCoroutine(Fill(25f, dayLengthInSeconds));
                     //TODO make a storm Coroutine //day two the rain picks up there is a huge storm
                     break;
                 case 3:
                     Debug.Log("DAY 3 start");
-                    StartCoroutine(Dry()); //day three the pond dries up
+                    StartCoroutine(Dry(dayLengthInSeconds)); //day three the pond dries up
+                    
                     break;
                 case 4:
                     Debug.Log("DAY 4 start");
-
+                    StartCoroutine(grow.Grow(dayLengthInSeconds, false));
                     break;
             }
                     //TODO: call on sound manager to start day sounds
@@ -73,8 +94,9 @@ public class TimeManager: MonoBehaviour
         }
     }
 
-    IEnumerator Fill()
+    IEnumerator Fill(float waterLevelMax,float duration)
     {
+        float fillDuration = duration;
         isFilling = true; // Set the flag to true
         float startY = water.transform.position.y; // Get the starting y-position of the water
         float t = 0.0f; // Time counter
@@ -92,8 +114,9 @@ public class TimeManager: MonoBehaviour
         yield break; // End the coroutine
     }
 
-    IEnumerator Dry()
+    IEnumerator Dry(float duration)
     {
+        float fillDuration = duration;
         float startY = water.transform.position.y; // Get the starting y-position of the water
         float t = 0.0f; // Time counter
 
