@@ -71,11 +71,13 @@ public class TimeManager: MonoBehaviour
             {
                 case 1:
                     Debug.Log("DAY 1 start");
+                    //start the light rain
                     StartCoroutine(Fill(4.11f,dayLengthInSeconds)); //day 1 the pond fills life appears
                     StartCoroutine(grow.Grow(dayLengthInSeconds, true));
                     break;
                 case 2:
                     Debug.Log("DAY 2 start");
+                    //heavy rain
                     StartCoroutine(Fill(25f, dayLengthInSeconds));
                     //TODO make a storm Coroutine //day two the rain picks up there is a huge storm
                     break;
