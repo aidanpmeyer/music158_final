@@ -376,6 +376,8 @@
 "Assets/dropplet.cs"
 "Assets/grow.cs"
 "Assets/RainController.cs"
+"Assets/Script/audioMarker.cs"
+"Assets/Script/markerHandler.cs"
 "Assets/startplaying.cs"
 "Assets/startsubmarine.cs"
 "Assets/submarine.cs"

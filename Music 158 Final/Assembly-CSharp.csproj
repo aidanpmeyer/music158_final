@@ -68,6 +68,8 @@
     <Compile Include="Assets/CharacterController.cs" />
     <Compile Include="Assets/submarine.cs" />
     <Compile Include="Assets/grow.cs" />
+    <Compile Include="Assets/Script/audioMarker.cs" />
+    <Compile Include="Assets/Script/markerHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
