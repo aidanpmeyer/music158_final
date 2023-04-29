@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.13630313, g: 0.13304767, b: 0.13535894, a: 1}
+  m_IndirectSpecularColor: {r: 0.13630274, g: 0.13304743, b: 0.13535865, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -312,7 +312,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &130717968
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -1219,7 +1219,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 500
+      scalar: 100
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -5323,7 +5323,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3922135282083122545, guid: ff11bf8f336990f4195b2dfc2abb45a1,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 974366c6092f954428a53c4fd770130c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 6b42ff2b9943a467ebfeb0566381a011, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -6232,7 +6232,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: -3922135282083122545, guid: ff11bf8f336990f4195b2dfc2abb45a1,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 974366c6092f954428a53c4fd770130c, type: 3}
+  m_audioClip: {fileID: 8300000, guid: b0deaaff48109436295937933d78f37c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9002,7 +9002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efe03b78d5117214ebdaed0f0206a748, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dayLengthInSeconds: 5
+  dayLengthInSeconds: 20
   nightAngle: 180
   dayAngle: 180
   sun: {fileID: 705507994}
