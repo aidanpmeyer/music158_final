@@ -1,0 +1,29 @@
+Models:
+	How are we representing each sounnd object
+	Owl
+	Frog
+	cricket
+	cicada
+
+VR:
+	Tomorrow impliment VR and activation of Objects
+
+Sound Mixer:
+	create desired groupings and filter them
+	Undrwater filter
+	Pitches
+
+Rain:
+	Get more droplet clibs and vary it
+
+WHY?
+	about life and creation and t
+
+Sunday:
+
+	MAking the transitions seamless leaving the scene as a desert barran scape
+	
+Considerations:
+	grouping (everything becomes a fish)
+	How are the objects entering the scene (possibly grow from the lillies)
+	becoming a dessert possible move all terrain to flat
