@@ -28,10 +28,10 @@ public class TerrainController : MonoBehaviour
         flattenStartTime = Time.time;
         Debug.Log("growland");
         Duration = Dur;
-        while (flattenProgress < .1)
+        while (flattenProgress <  1)
         {
             Duration = Dur;
-            flattenProgress = Mathf.Clamp01((Time.time - flattenStartTime) / Duration);
+            flattenProgress = (Time.time - flattenStartTime) / Duration;
             float flattenAmount = FlattenCurve.Evaluate(flattenProgress);
 
             // modify the terrain heights based on the flatten amount
@@ -42,16 +42,30 @@ public class TerrainController : MonoBehaviour
                 {
                     float height = originalHeights[z, x];
                     if (height < HeightThreshold)
-                        height = Mathf.Lerp(height, 0, flattenAmount);
+                        if (flat)
+                        {
+                            height = Mathf.Lerp(0, height, flattenAmount);
+                        } else
+                        {
+                            height = Mathf.Lerp(height, 0, flattenAmount);
+                        }
+                        
                     heights[z, x] = height;
                 }
             }
+
             terrain.terrainData.SetHeights(0, 0, heights);
 
             // if the animation is complete, reset the terrain heights to their original values
-           
 
+            // yield control back to Unity for one frame
+            yield return null;
         }
+        if (true)
+        {
+            terrain.terrainData.SetHeights(0, 0, originalHeights);
+        }
+       
         yield return null;
     }
 

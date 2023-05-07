@@ -340,6 +340,7 @@
 -r:"C:/Users/aidan/Desktop/Max/music158_final/Music 158 Final/Library/PackageCache/com.unity.visualscripting@1.7.8/Editor/VisualScripting.Core/EditorAssetResources/Unity.VisualScripting.TextureAssets.dll"
 -r:"C:/Users/aidan/Desktop/Max/music158_final/Music 158 Final/Library/PackageCache/com.unity.visualscripting@1.7.8/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.InputSystem.ref.dll"
+-r:"Library/Bee/artifacts/1900b0aE.dag/Unity.XR.CoreUtils.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.XR.Management.Editor.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.XR.Management.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aE.dag/Unity.XR.OpenXR.ref.dll"

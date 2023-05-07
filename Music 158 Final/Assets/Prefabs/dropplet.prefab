@@ -112,7 +112,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 8827777550488713833, guid: ff11bf8f336990f4195b2dfc2abb45a1,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 00140af9e8855a54a9702c1b2937cb0b, type: 3}
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -210,10 +210,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   soundVariations:
-  - {fileID: 8300000, guid: 00140af9e8855a54a9702c1b2937cb0b, type: 3}
-  - {fileID: 8300000, guid: 157b5bb9dcd35634c9d1386db38b03df, type: 3}
-  - {fileID: 8300000, guid: 10742fa60f20ca444ae453e96902113f, type: 3}
-  - {fileID: 0}
+  - {fileID: 8300000, guid: 470978685cfdb8048af32497a79e3ec9, type: 3}
+  - {fileID: 8300000, guid: 1d44a7ea74b9b3446bf3c1a8f2c6fecd, type: 3}
+  - {fileID: 8300000, guid: cbe5e9d36baf2d844a2f6c49ad50e868, type: 3}
+  - {fileID: 8300000, guid: ae00154e27343d7498dd2449932495b8, type: 3}
+  - {fileID: 8300000, guid: d66a48cea5012b64e8bf964d29f7027c, type: 3}
+  - {fileID: 8300000, guid: 5a18f17716602b04d8a6369fca613fd1, type: 3}
 --- !u!1 &5150096325911313716
 GameObject:
   m_ObjectHideFlags: 0

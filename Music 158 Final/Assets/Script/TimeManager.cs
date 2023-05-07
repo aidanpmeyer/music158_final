@@ -11,6 +11,7 @@ public class TimeManager: MonoBehaviour
     private bool isDay = true;                  // Boolean value for day/night
     public int DayNum = 0;
     public TerrainController TerrainController;
+    public RainController RainController;
 
 
     
@@ -73,9 +74,10 @@ public class TimeManager: MonoBehaviour
                 case 1:
                     Debug.Log("DAY 1 start");
                     //start the light rain
-                    StartCoroutine(TerrainController.Flatten(dayLengthInSeconds, true));
+                    //StartCoroutine(TerrainController.Flatten(dayLengthInSeconds, false));
                     StartCoroutine(Fill(4.11f,dayLengthInSeconds)); //day 1 the pond fills life appears
                     StartCoroutine(grow.Grow(dayLengthInSeconds, true));
+                    StartCoroutine(RainController.RainSequence(dayLengthInSeconds));
                     break;
                 case 2:
                     Debug.Log("DAY 2 start");
@@ -85,6 +87,7 @@ public class TimeManager: MonoBehaviour
                     break;
                 case 3:
                     Debug.Log("DAY 3 start");
+                    StartCoroutine(TerrainController.Flatten(dayLengthInSeconds, true));
                     StartCoroutine(Dry(dayLengthInSeconds)); //day three the pond dries up
                     
                     break;

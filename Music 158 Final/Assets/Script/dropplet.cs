@@ -12,10 +12,10 @@ public class dropplet : MonoBehaviour
 
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         audioSource= GetComponent<AudioSource>();
-        audioSource.clip = soundVariations[Random.Range(0, soundVariations.Length)];
+        audioSource.PlayOneShot(soundVariations[Random.Range(0, soundVariations.Length)]);
     }
 
 }
